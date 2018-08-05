@@ -3,8 +3,6 @@ title: Graphql
 date: '2018-08-02'
 ---
 
-#Handling Data
-
 In order to avoid creating individual posts I'm going to leverage Graphql to pull in data from markdown files and then programatically create posts. Luckily there are seveal tools built in to help out.
 
 ##GraphiQL and Source Plugins

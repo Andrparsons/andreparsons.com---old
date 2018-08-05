@@ -3,8 +3,6 @@ title: Adventures in Gatsby
 date: '2018-08-01'
 ---
 
-#Adventures in Gatsby
-
 This website was made with [Gatsby.js](https://www.gatsbyjs.org), an absolutely fantastic framework for building static sites. A few weeks of playing around with it has more than convinced me to use it for my next project.
 
 At the time of this post, the Gatsby v2 beta has been out for about a month. I will be using the beta build to construct this very site, documenting my progress as I go. I'm certain I'll ecounter breaking changes and I'll make my fair share of mistakes on the way, but I'm certain the effort will make me a better developer.

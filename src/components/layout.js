@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import './layout.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
 const Layout = ({ children, data }) => (
   <StaticQuery

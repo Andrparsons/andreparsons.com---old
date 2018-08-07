@@ -26,6 +26,7 @@ module.exports = {
               withWebp: true,
             },
           },
+          'gatsby-remark-prismjs',
         ],
       },
     },

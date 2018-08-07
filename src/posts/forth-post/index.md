@@ -22,7 +22,7 @@ options: {
     {
       resolve: 'gatsby-remark-images',
       options: {
-        maxWidth: 650,
+        maxWidth: 960,
         showCaptions: true,
         sizeByPixelDensity: true,
         withWebp: true,
@@ -32,5 +32,9 @@ options: {
   ],
 }
 ```
+
+Don't forget to link to the css theme and we can get some instantly well styled code.
+
+![Code](Code.jpeg "Styled Code")
 
 import 'prismjs/themes/prism-tomorrow.css'

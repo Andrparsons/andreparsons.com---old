@@ -1,3 +1,17 @@
+---
+title: Styled Components
+date: '2018-08-12'
+---
+
+I'll be using styled components in order keep all of the code for each section in its own file. In order to get started we need the following NPM packages:
+
+1. gatsby-plugin-styled-components
+2. styled-components
+3. babel-plugin-styled-components
+
+Styled Components can be used like this in my header for example:
+
+```javascript
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
@@ -61,3 +75,10 @@ const Header = ({ siteTitle }) => (
 )
 
 export default Header
+
+`
+```
+
+Each styled component instance makes a new element that can be swapped in just like any other React component, this has the very useful property of keeping the css scoped to each component so I don't have to worry about collision.
+
+I've also gone ahead and created About and Contact pages to link to. The Link component in Gatsby will take care of all the routing so all that needs to be done is add two react components named about.js and contact.js and drop them into the pages folder.

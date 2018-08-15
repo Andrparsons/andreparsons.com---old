@@ -10,8 +10,7 @@ const Main = styled.div`
 const IndexPage = () => (
   <Layout>
     <Main>
-      <h1>Hi I'm Andre</h1>
-      <p>I make websites and blog about web development</p>
+      <p>I'll be a form in the near future - good thing Netlify can handle forms</p>
     </Main>
   </Layout>
 )

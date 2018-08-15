@@ -7,13 +7,13 @@ const Main = styled.div`
 
 `
 
-const IndexPage = () => (
+const AboutPage = () => (
   <Layout>
     <Main>
       <h1>Hi I'm Andre</h1>
-      <p>I make websites and blog about web development</p>
+      <p>Some cool stuff about me :)</p>
     </Main>
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage

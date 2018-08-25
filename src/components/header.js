@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Toggle from '../utils/Toggle'
+import Menu from './menu'
 
 const HeaderWrapper = styled.div`
   background: rebeccapurple;
@@ -36,27 +38,36 @@ const Header = ({ siteTitle }) => (
       <Link to="/">AP</Link>
     </h1>
     <h1 style={{ margin: 0 }}>
-      <Link to="/">{ siteTitle }</Link>
+      <Link to="/">{siteTitle}</Link>
     </h1>
-    <h4 style={{ margin: 0 }}>
-      <MainNav>
-        <ul>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </MainNav>
-    </h4>
+    <Toggle>
+      {({ on, toggle }) => (
+        <>
+          <button onClick={toggle}>Menu</button>
+          <Menu on={on} toggle={toggle}>
+            <h4 style={{ margin: 0 }}>
+              <MainNav>
+                <ul>
+                  <li>
+                    <Link to="/blog">Blog</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/contact">Contact</Link>
+                  </li>
+                </ul>
+              </MainNav>
+            </h4>
+          </Menu>
+        </>
+      )}
+    </Toggle>
   </HeaderWrapper>
 )
 

@@ -1,17 +1,21 @@
 ---
-title: Graphql
+title: GraphQL and Remark
 date: '2018-08-02'
 ---
 
-In order to avoid creating individual posts I'm going to leverage Graphql to pull in data from markdown files and then programatically create posts. Luckily there are seveal tools built in to help out.
+In order to avoid creating individual html pages for each post I'm going to leverage  the power of Graphql to pull in data from markdown files and then programatically generate the html. GraphQL is a query language created by Facebook to pull in data for react components. It functions as a universal API and it comes with a built in graphical IDE called GraphiQL (heh) to help test out and construct queries right in the browser.
 
-##GraphiQL and Source Plugins
+In order to make use of markdown files, two Gatsby plugins are needed. The first is gatsby-source-filesystem which allows read access to files in a specified directory, allowing them to be queried with GraphQL. The second is gatsby-transformer-remark, which can take the markdown and convert it into usable html.
 
-GraphiQL is the built in IDE that is used to construct queries on the site data. Since I need to pull in files a file system is needed as well.
+## Installing plugins and Configuration
 
-##gatsby-source-filesystem
+```
+npm install --save gatsby-source-filesystem@next gatsby-transformer-remark@next
+```
 
-Installing the the gatsby-source-filesystem plugin and pointing at a directtory means that files can be referenced in graphql queries.
+At the time of this post, Gatsby V2 is still in beta so all plugins need to be tagged with '@next' to make sure that the V1 plugins are not pulled from NPM, as there are breaking changes.
+
+Now that the plugins are installed they need to be added to the gatsby-config file. 
 
 gatsby-config.js
 
@@ -30,21 +34,22 @@ module.exports = {
         name: 'posts',
       },
     },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        excerpt_separator: `<!-- end -->`,
+      },
+    },
     'gatsby-plugin-react-helmet',
   ],
 }
 ```
-
-##graphiql
-
-Now it is possible to write queries to get information on files.
+GraphiQL is quite useful here because all of data is visible in a tree and queries can be constructed by selecting the nested elements. Each plugin comes with its own trees so it is possible to write new queries each time. For example gatsby-source-filesytem gives access to the allFile node and can be used like this:
 
 ![Graphiql](graphiql.jpeg "Sample Query")
 
-Except now we need to *do* something with this information, and luckily the transfomer-remark plugin can convert markdown to html.
+Remark gives access to the allMarkdownRemark node, which has all of the information needed to programmatically generate pages like so:
 
-Once installed we can query in the information *in* the files and turn it into html and insert into our components.
+![remark query](graphiql-2.jpeg "Markdown, transformed!")
 
-![remark query](grpahiql-2.jpeg "Markdown, transformed!")
-
-Now that files can be used, I need to actually put them into the blog
+The next installment will go over doing just that in real components.

@@ -22,4 +22,4 @@ I'll be using [Netlify](https://www.netlify.com) for hosting, because it's fast 
 
 ![Netlify Magic](setup-2.jpeg "Systems online.")
 
-The default starter is online! Now every change that is pushed to GitHub will be picked up by netlify.
+The default starter is online! Now every change that is pushed to GitHub will be picked up by netlify. I won't go into the details here, but Netlify has intutive setup process. I was able to hook up my custom domain and use [Let's Encrypt](https://letsencrypt.org) to enable HTTPS with a free SSL/TLS certificate.
